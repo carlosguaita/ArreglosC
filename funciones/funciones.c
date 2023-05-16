@@ -15,14 +15,16 @@ float ingreseComponente(char xy, int numPunto){
 void calcularSegmentoMayor(float xPunto[], float yPunto[],int numPuntos){
     float seg[S];
     float numMayor;
+    int z=0;
     for(int i=0;i<S-1;i++){
         for (int j=i+1;j<S;j++){
-            seg[i]=calcularDistancias(xPunto[i],yPunto[i],xPunto[j],yPunto[j]);
-            if (i==0){
+            seg[z]=calcularDistancias(xPunto[i],yPunto[i],xPunto[j],yPunto[j]);
+            if (z==0){
                 numMayor=seg[i];
             }else if(seg[i]>=numMayor){
                 numMayor=seg[i];
             }
+            z++;
         }
     }
     printf("El segmento mayor tiene el valor de: %f\n",numMayor);
@@ -31,14 +33,16 @@ void calcularSegmentoMayor(float xPunto[], float yPunto[],int numPuntos){
 void calcularSegmentoMenor(float xPunto[], float yPunto[],int numPuntos){
     float seg[S];
     float numMayor;
+      int z=0;
     for(int i=0;i<S-1;i++){
         for (int j=i+1;j<S;j++){
-            seg[i]=calcularDistancias(xPunto[i],yPunto[i],xPunto[j],yPunto[j]);
-            if (i==0){
+            seg[z]=calcularDistancias(xPunto[i],yPunto[i],xPunto[j],yPunto[j]);
+            if (z==0){
                 numMayor=seg[i];
             }else if(seg[i]<=numMayor){
                 numMayor=seg[i];
             }
+             z++;
         }
     }
     printf("El segmento menor tiene el valor de: %f\n",numMayor);
